@@ -1,5 +1,5 @@
 // https://www.youtube.com/watch?v=gs0l4rsQCGM&list=WL&index=8
-// node Greeting.jsで実行
+// node greeting.jsで実行
 console.log('Good Morning');
 
 /** @var int 変数定義 */
@@ -77,8 +77,8 @@ class Student {
 let student_name = 'kanbaru';
 let student = new Student(student_name);
 /** @var array 得点 */
-let get_point = [70, 65, 50, 90, 30];
-let average = student.avg(get_point);
+let point = [70, 65, 50, 90, 30];
+let average = student.avg(point);
 console.log(average);
 let judge = student.judge(average);
 console.log(judge);

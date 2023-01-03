@@ -1,3 +1,4 @@
+// node main.jsでも実行可能ですが、その際は下記をコメントアウトしなければエラー
 alert('Open the development tool!')
 
 /**
