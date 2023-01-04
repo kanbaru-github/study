@@ -77,3 +77,4 @@ function error(message: string) {
 	throw new Error(message);
 }
 // console.log(error('This is an error'));
+
