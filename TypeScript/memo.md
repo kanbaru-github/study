@@ -10,9 +10,14 @@
 - ES5のコンパイラとしての側面(指定して最新のJSにできる)
 
 ## コンパイル
+```
+tsc
+<!-- tscコマンドの後にファイルを指定することもできる -->
+```
 - 自動コンパイル(watch mode)
 ```
-tsc index.ts --watch 
+tsc --watch
+<!-- tsc -wでも可能 -->
 ```
 control + c で解除
 
@@ -22,3 +27,10 @@ tsc --init
 tsc
 tsc -w
 ```
+
+- tsconfig.jsonのおすすめ設定
+	- outDir コンパイル先を指定(デフォルトは同じディレクトリ)  
+		念の為にrootDirも確認する(全てのtsファイルが入るように設定しないとエラーになる)
+	- removeComments コメントを反映させない
+	- noEmitOnError エラーが発生したらコンパイルしない  
+		watchモードだと意味がない
