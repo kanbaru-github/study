@@ -1,0 +1,47 @@
+@use 'component/variables' as v;
+@use 'component/header';
+
+// サークル
+@mixin circle($size: 80px, $bg: #0BD) {
+	width: $size;
+	height: $size;
+	border-radius: 50%;
+	background-color: $bg;
+}
+// グラデーション
+@mixin gradient-color($color1: #4DB1EC, $color2: #B473BF) {
+	background: linear-gradient($color1, $color2);
+}
+// プロパティも含めたブロックごと引き渡す PCデザインを指定
+@mixin desktop {
+	@media(min-width: 600px) {
+		@content;
+	}
+}
+
+.nav {
+	padding: 20px;
+	background-color: v.$bg-color;
+	a {
+		color: v.$main-color;
+	}
+}
+
+div {
+	@include circle;
+}
+.photo {
+	@include circle(100px, #CCC);
+}
+.title {
+	@include gradient-color;
+}
+.box {
+	@include gradient-color(#FF9F67, #ffd67f)
+}
+h1 {
+	font-size: 2rem;
+	@include desktop {
+		font-size: 5rem;
+	}
+}
