@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Vue.jsのサンプル</title>
+</head>
+<body>
+	<style>
+		.error {
+			color: red;
+		}
+		/* Vue.jsが自動的につけてくれるらしいが確認できないため、アニメーションにならない */
+		.flip-list-move {
+			transition: transforms 5s;
+		}
+	</style>
+
+	<div id="app">
+		<p v-if="error">error</p>
+
+		<p v-bind:class="error_class">error</p>
+		<img v-bind:src="img_src">
+
+		<p>{{ now }}</p>
+		<button v-on:click="time">現在時刻を表示</button>
+
+		<button v-on:click="shuffle">シャッフル</button>
+		<transition-group name="flip-list" tag="ul">
+			<li v-for="pref in prefs" v-bind:key="pref.name">
+				{{ pref.name }}
+			</li>
+		</transition-group>
+		</ul>
+
+		<alert-box>
+			テスト
+		</alert-box>
+	</div>
+
+	<section id="wrapper">
+		<ul>
+			<li>
+				<input v-model="foods" type="radio" value="fruits" name="foods" id="fruits">
+				<label for="fruits">果物</label>
+			</li>
+			<li>
+				<input v-model="foods" type="radio" value="vegetables" name="foods" id="vegetables">
+				<label for="vegetables">野菜</label>
+			</li>
+			<li>
+				<input v-model="foods" type="radio" value="meats" name="foods" id="meats">
+				<label for="meats">肉</label>
+			</li>
+		</ul>
+		<div>
+			<select v-model="foodSelect" id="foodSelect">
+				<option value="">未選択</option>
+				<option :value="food" v-for="food in foodList">
+					{{ food }}
+				</option>
+			</select>
+		</div>
+	</section>
+
+	<script src="https://cdn.jsdelivr.net/npm/vue@2.7.11/dist/vue.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js"></script>
+	<script>
+		let app = new Vue({
+			el: "#app",
+			data: {
+				error: true,
+
+				error_class: "error",
+				img_src: "sample.png",
+
+				now: "00:00:00",
+
+				prefs: [
+					{name: '北海道'},
+					{name: '青森県'},
+					{name: '岩手県'},
+					{name: '宮城県'},
+					{name: '秋田県'},
+					{name: '山形県'},
+					{name: '福島県'}
+				],
+			},
+			methods: {
+				time: function(e) {
+					let date = new Date();
+					this.now = date.getHours()+":"+date.getMinutes()+":"+date.getSeconds();
+				},
+				shuffle: function() {
+					this.prefs = _.shuffle(this.prefs);
+				}
+			}
+		});
+
+		Vue.component('alert-box', {
+			template: `
+				<div class="alert" v-on:click="caution">
+					<strong>Error!</strong>
+					<slot></slot>
+				</div>
+			`,
+			methods: {
+				caution: function() {
+					alert('クリックされました');
+				}
+			}
+		});
+
+		let vueIndex = new Vue({
+			el: "#wrapper",
+			data: {
+				foods: "",
+				food: {
+					'fruits': ["りんご", "みかん", "ぶどう"],
+					'vegetables': ["キャベツ", "じゃがいも", "なす"],
+					'meats': ["鶏肉", "豚肉", "牛肉"]
+				}
+			},
+			computed: {
+				foodList() {
+					return this.food[this.foods];
+				}
+			},
+		});
+	</script>
+</body>
+</html>
