@@ -1,5 +1,6 @@
 ## 参考
 - https://www.youtube.com/watch?v=XKSYF2aZnkQ&list=RDCMUC-bOAxx-YOsviSmqh8COR0w&start_radio=1&rv=XKSYF2aZnkQ&t=75
+	- source code: https://github.com/deatiger/react-basic-new
 - https://ja.reactjs.org/
 - https://qiita.com/kyosuke5_20/items/c5f68fc9d89b84c0df09
 
@@ -15,3 +16,6 @@ UIを作ることに特化したJavaScriptライブラリ
 - JSX JavaScriptの拡張言語(HTML+JavaScriptのような記述)  
 	JSX=>React.createElementの記述にコンパイルされる  
 	最上位コンポーネントは並列にできない(何かで囲む必要がある)
+- Hooks 関数コンポーネントに state やライフサイクルといった React の機能を “接続する (hook into)” ための関数
+	- props 引数のようにコンポーネントに渡される値
+	- state コンポーネント内で制御されるもの
