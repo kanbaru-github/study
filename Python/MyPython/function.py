@@ -25,4 +25,3 @@ def func1(x: str, y: int) -> str:
 	"""
 	return f'{x}は{y}円です'
 print(func1('りんご', 100))
-

@@ -29,6 +29,8 @@ tsc -w
 ```
 
 - tsconfig.jsonのおすすめ設定
+	- target JavaScriptのバージョンを指定  
+		参考：https://qiita.com/ozoneboy/items/9c11ac3323ca94919052
 	- outDir コンパイル先を指定(デフォルトは同じディレクトリ)  
 		念の為にrootDirも確認する(全てのtsファイルが入るように設定しないとエラーになる)
 	- removeComments コメントを反映させない
