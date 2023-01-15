@@ -38,3 +38,15 @@ jupyter lab
 - NumPy 高速にリストを計算するためのライブラリ
 - ピボットテーブル Pythonのクロス集計表
 - warnings warningを表示しないライブラリ
+
+- ライブラリ
+	- パッケージ
+		- モジュール
+			- クラス
+			- メソッド
+- selenium：ブラウザを使って値をコピー、クリック、URLへ飛ばす、入力ボックスに値を入れることができるライブラリ
+- beautifulsoup：HTMLタグを読み込むことができるライブラリ
+- ChromeDriver：Google Chromeを操作するために必要なソフトウェアでCLIで下記のコマンドによりインストール(Mac)
+```
+brew install --cask chromedriver
+```
