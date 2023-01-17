@@ -1,6 +1,7 @@
 ## 参考
 - https://www.youtube.com/watch?v=HyU3XL2F9GE
 - https://www.youtube.com/watch?v=XfoYeWCzjac&list=PLavQwENTsEBUcTIz5H8ZL6QUs6ClMpV8K&index=1
+- https://www.youtube.com/watch?v=ANoxy74O_VE&list=WL&index=7
 
 ## Pythonとは
 - オブジェクト指向言語
@@ -50,3 +51,4 @@ jupyter lab
 ```
 brew install --cask chromedriver
 ```
+- time 経過時間を記録したらり、処理を一時停止できるライブラリ
