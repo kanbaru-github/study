@@ -48,7 +48,8 @@ jupyter lab
 - selenium：ブラウザを使って値をコピー、クリック、URLへ飛ばす、入力ボックスに値を入れることができるライブラリ
 - beautifulsoup：HTMLタグを読み込むことができるライブラリ
 - ChromeDriver：Google Chromeを操作するために必要なソフトウェアでCLIで下記のコマンドによりインストール(Mac)
-- urllib：PythonでURLを扱うライブラリ
+- urllib：PythonでURLを扱うライブラリ  
+	requestsの方が記述量が少なくシンプルに実装可能
 ```
 brew install --cask chromedriver
 ```
