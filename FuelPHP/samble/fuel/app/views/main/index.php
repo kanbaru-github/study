@@ -1,0 +1,2 @@
+<?= Fuel::VERSION ?>
+<?= phpversion() ?>
