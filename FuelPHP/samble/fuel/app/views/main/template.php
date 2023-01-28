@@ -5,10 +5,12 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<?= Asset::css() ?>
+	<?= Asset::js('main.js') ?>
+
 	<title>FuelPHP_sample</title>
 </head>
 <body>
 	<?= $content ?>
-	<?= Asset::js() ?>
+	<?= Asset::js('main.js') ?>
 </body>
 </html>

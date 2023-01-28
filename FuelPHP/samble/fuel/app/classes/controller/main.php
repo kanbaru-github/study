@@ -14,7 +14,7 @@ class Controller_Main extends Controller_Hybrid
 	{
 		$this->template = 'main/template';
 		// 順番に注意
-		parent::before(); 
+		parent::before();
 	}
 	public function action_index()
 	{
