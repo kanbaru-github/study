@@ -6,8 +6,22 @@ type Player = 'first' | 'second'
 
 // 駒の位置を表すクラス
 class Position {
-	constructor(private suji: Suji, private dan: Dan) {
+	constructor(private suji: Suji, private dan: Dan) {}
 
+
+	// パラメーターに渡された位置と現在の位置を比較するメソッド
+	distanceFrom(position: Position , player: Player) {
+		if (player === 'first') {
+			return {
+				suji: Math.abs(position.suji - this.suji),
+				dan: Math.abs(Number(position.dan) - Number(this.dan))
+			}
+		} else {
+			return {
+				suji: Math.abs(position.suji - this.suji),
+				dan: -(Math.abs(Number(position.dan) - Number(this.dan))) // 段は正負反対
+			}
+		}
 	}
 }
 
@@ -34,4 +48,9 @@ abstract class Piece {
 	abstract canMoveTo(position: Position, player: Player): boolean
 }
 
-
+class Osho extends Piece {
+	// 王将の移動できるか具体的に
+	canMoveTo(position: Position, player: Player): boolean {
+		const distance = this.position.distanceFrom(position, player)
+	}
+}
