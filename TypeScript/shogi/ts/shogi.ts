@@ -52,5 +52,16 @@ class Osho extends Piece {
 	// 王将の移動できるか具体的に
 	canMoveTo(position: Position, player: Player): boolean {
 		const distance = this.position.distanceFrom(position, player)
+		return distance.suji < 2 && distance.dan < 2
+	}
+}
+
+class Game {
+	private pieces = Game.makePieces()
+	private static makePieces() {
+		return [
+			new Osho('first', 5, '1'),
+			new Osho('second', 5, '9')
+		]
 	}
 }
